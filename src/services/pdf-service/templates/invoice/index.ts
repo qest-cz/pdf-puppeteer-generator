@@ -1,4 +1,4 @@
-import { parseNumberToCzechCurrency, postalCodeTransform, parseDateToCzechDate } from '../utils';
+import { parseNumberToCzechCurrency, parsePostalCode, parseDateToCzechDate } from '../utils';
 import { InvoicePdfParams } from './types';
 
 export const getInvoiceHtml = (params: InvoicePdfParams) => {
@@ -75,11 +75,6 @@ export const getInvoiceHtml = (params: InvoicePdfParams) => {
                 .half:first-child .label {
                     width: 105px;
                 }
-                .non-payer {
-                    position: absolute;
-                    left: 0;
-                    bottom: -15px;
-                }
                 .address {
                     min-height: 58px;
                 }
@@ -99,9 +94,6 @@ export const getInvoiceHtml = (params: InvoicePdfParams) => {
                 }
                 hr {
                     margin-bottom: 14px;
-                }
-                .disabledRow {
-                    display: none;
                 }
             </style>
         </head>
@@ -132,7 +124,7 @@ export const getInvoiceHtml = (params: InvoicePdfParams) => {
                                 <br />
                                 ${params.supplier.address.city}
                                 <br />
-                                ${postalCodeTransform(params.supplier.address.postalCode)}
+                                ${parsePostalCode(params.supplier.address.postalCode)}
                             </div>
                         </div>
                     </div>
@@ -149,7 +141,7 @@ export const getInvoiceHtml = (params: InvoicePdfParams) => {
                                 <br />
                                 ${params.customer.address.city}
                                 <br />
-                                ${postalCodeTransform(params.customer?.address?.postalCode)}
+                                ${parsePostalCode(params.customer?.address?.postalCode)}
                             </div>
                         </div>
                     </div>

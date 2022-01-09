@@ -24,7 +24,3 @@ export type InvoicePdfParams = {
         totalBilling: number;
     };
 };
-
-export type CreditNotePdfParams = InvoicePdfParams & {
-    previousInvoiceNumber: string;
-};

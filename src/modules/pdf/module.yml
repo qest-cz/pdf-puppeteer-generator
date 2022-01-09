@@ -1,0 +1,13 @@
+paths:
+  /pdf:
+    get:
+      description: Returns the invoice in the PDF format
+      responses:
+        '200':
+          description: A PDF file
+          content:
+            application/pdf:
+              schema:
+                type: string
+                format: binary
+

@@ -19,6 +19,7 @@
       "@types/jest",
       "jest"
     ],
+    "skipLibCheck": true,
     "noUnusedLocals": true,
     "resolveJsonModule": true
   },

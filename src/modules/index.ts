@@ -1,5 +1,4 @@
 import * as express from 'express';
-import { getDocumentation, getExample } from '../container/controllers';
-import { validateGetExample } from './example/middlewares/validate-get';
+import { getDocumentation, getPdf } from '../container/controllers';
 
-export default express.Router().use(`/swagger`, getDocumentation).use(`/example`, validateGetExample, getExample);
+export default express.Router().use(`/swagger`, getDocumentation).use(`/pdf`, getPdf);

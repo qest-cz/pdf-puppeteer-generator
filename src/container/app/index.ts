@@ -1,4 +1,3 @@
-import config from '../../config';
-import { ExampleService } from '../../services';
+import { PdfService } from '../../services';
 
-export const exampleService = new ExampleService(config.bar);
+export const pdfService = new PdfService();
