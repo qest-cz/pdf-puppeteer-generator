@@ -1,13 +1,10 @@
 {
-  "name": "nodejs-rest-api-template",
+  "name": "pdf-puppeteer-generator",
   "version": "0.0.1",
-  "description": "Typescript REST API starter pack for typescript/node.js development.",
+  "description": "Typescript PDF puppeteer generator.",
   "main": "index.js",
-  "repository": "https://github.com/qest-cz/nodejs-rest-api-template.git",
+  "repository": "https://github.com/qest-cz/pdf-puppeteer-generator.git",
   "author": "Cyril Urban <cyril.urban@qest.cz>",
-  "contributors": [
-    "Radim Štěpaník <radim.stepanik@gmail.com>"
-  ],
   "license": "MIT",
   "scripts": {
     "build": "rimraf dist && tsc",
@@ -24,7 +21,8 @@
     "test:update": "yarn test --updateSnapshot",
     "test:cover": "yarn test --coverage",
     "start": "node -r dotenv/config dist/src/index.js dotenv_config_path=./config/.env",
-    "clean": "concurrently 'rm -rf dist' 'rm -rf coverage'"
+    "clean": "concurrently 'rm -rf dist' 'rm -rf coverage'",
+    "generatePdf": "ts-node -r dotenv/config src/scripts/generate-pdf.ts dotenv_config_path=./config/.env"
   },
   "dependencies": {
     "@qest/error-utils": "^1.0.1",
