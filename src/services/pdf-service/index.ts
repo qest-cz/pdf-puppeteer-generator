@@ -9,7 +9,7 @@ export class PdfService {
 
         await page.setContent(html);
 
-        const pdfBuffer = await page.pdf();
+        const pdfBuffer = await page.pdf({ timeout: 300000 });
 
         await page.close();
         await browser.close();
